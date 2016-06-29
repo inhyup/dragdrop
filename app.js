@@ -1,23 +1,9 @@
-var koa = require('koa')
-var app = koa()
+const koa = require('koa')
+const serve = require('koa-static')
+const app = koa()
+const path = require('path')
 
-app.use(function *(next){
-  var start = new Date
-  yield next
-  var ms = new Date - start
-  this.set('X-Response-Time', ms + 'ms')
-})
-
-app.use(function *(next) {
-  var start = new Date
-  yield next
-  var ms = new Date - start
-  console.log('%s %s - %s', this.method, this.url, ms)
-})
-
-app.use(function *(){
-  this.body = 'Hello world'
-})
+app.use(serve(path.join(__dirname, 'public')))
 
 app.listen(3000)
 console.log('server is running on port 3000')
