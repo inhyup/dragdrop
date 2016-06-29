@@ -55,13 +55,13 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 38);
 	
-	var _hello = __webpack_require__(/*! ./hello.jsx */ 168);
+	var _mainTable = __webpack_require__(/*! ./mainTable.jsx */ 171);
 	
-	var _hello2 = _interopRequireDefault(_hello);
+	var _mainTable2 = _interopRequireDefault(_mainTable);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	(0, _reactDom.render)(_react2.default.createElement(_hello2.default, null), document.getElementById('content'));
+	(0, _reactDom.render)(_react2.default.createElement(_mainTable2.default, null), document.getElementById('content'));
 
 /***/ },
 /* 1 */
@@ -20858,10 +20858,11 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 168 */
-/*!*******************!*\
-  !*** ./hello.jsx ***!
-  \*******************/
+/* 168 */,
+/* 169 */
+/*!*********************!*\
+  !*** ./section.jsx ***!
+  \*********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20876,19 +20877,145 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var HelloComponent = _react2.default.createClass({
-	  displayName: 'HelloComponent',
+	var Section = _react2.default.createClass({
+	  displayName: 'Section',
 	
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'h1',
+	      'div',
 	      null,
-	      'Hello world'
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'section'
+	      ),
+	      _react2.default.createElement(
+	        'ul',
+	        null,
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          'writing section'
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          'listening section'
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          'ei section'
+	        )
+	      )
 	    );
 	  }
 	});
 	
-	exports.default = HelloComponent;
+	exports.default = Section;
+
+/***/ },
+/* 170 */,
+/* 171 */
+/*!***********************!*\
+  !*** ./mainTable.jsx ***!
+  \***********************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _sectionComponents = __webpack_require__(/*! ./sectionComponents.jsx */ 173);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var MainTable = _react2.default.createClass({
+	  displayName: 'MainTable',
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'Main Table'
+	      ),
+	      _react2.default.createElement(_sectionComponents.SectionList, null),
+	      _react2.default.createElement(_sectionComponents.SectionAdd, null)
+	    );
+	  }
+	});
+	
+	exports.default = MainTable;
+
+/***/ },
+/* 172 */,
+/* 173 */
+/*!*******************************!*\
+  !*** ./sectionComponents.jsx ***!
+  \*******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.SectionAdd = exports.SectionList = undefined;
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _section = __webpack_require__(/*! ./section.jsx */ 169);
+	
+	var _section2 = _interopRequireDefault(_section);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var SectionList = _react2.default.createClass({
+	  displayName: 'SectionList',
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'Section List'
+	      ),
+	      _react2.default.createElement(_section2.default, null)
+	    );
+	  }
+	});
+	
+	var SectionAdd = _react2.default.createClass({
+	  displayName: 'SectionAdd',
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'Section Add'
+	      )
+	    );
+	  }
+	});
+	
+	exports.SectionList = SectionList;
+	exports.SectionAdd = SectionAdd;
 
 /***/ }
 /******/ ]);

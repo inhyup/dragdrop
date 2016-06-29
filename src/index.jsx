@@ -1,9 +1,8 @@
 import React from 'react'
 import {render} from 'react-dom'
-import HelloComponent from './hello.jsx'
-
+import MainTable from './mainTable.jsx'
 
 render(
-  <HelloComponent />,
+  <MainTable />,
   document.getElementById('content')
 )
