@@ -11,9 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "koa": "^1.2.0",
-    "koa-static": "^2.0.0",
-    "react": "^15.1.0",
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
@@ -23,6 +20,11 @@
     "babel-preset-react": "^6.11.0",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-register": "^6.9.0",
+    "koa": "^1.2.0",
+    "koa-static": "^2.0.0",
+    "react": "^15.1.0",
+    "react-dnd": "^2.1.4",
+    "react-dnd-html5-backend": "^2.1.2",
     "react-dom": "^15.1.0",
     "webpack": "^1.13.1"
   }
