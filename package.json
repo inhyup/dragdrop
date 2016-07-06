@@ -22,10 +22,17 @@
     "babel-register": "^6.9.0",
     "koa": "^1.2.0",
     "koa-static": "^2.0.0",
+    "material-ui": "^0.15.1",
     "react": "^15.1.0",
+    "react-accordion": "^0.1.0",
+    "react-accordion-component": "^1.0.10",
+    "react-addons-pure-render-mixin": "^15.2.0",
+    "react-collapse": "^2.3.1",
     "react-dnd": "^2.1.4",
     "react-dnd-html5-backend": "^2.1.2",
     "react-dom": "^15.1.0",
+    "react-height": "^2.1.1",
+    "react-motion": "^0.4.4",
     "webpack": "^1.13.1"
   }
 }

@@ -4,7 +4,6 @@ import {DragDropContext} from 'react-dnd'
 import Section from './section.jsx'
 import update from 'react/lib/update'
 
-
 const style = {
   width: 400
 }
@@ -19,21 +18,24 @@ var SectionList = React.createClass({
       }, {
         id: 2,
         text: 'section 2'
+
       }, {
         id: 3,
         text: 'section 3'
+
       }, {
         id: 4,
         text: 'section 4'
+
       }]
     }
   },
 
 
-moveSection: function(dragIndex, hoverIndex) {
+  moveSection: function(dragIndex, hoverIndex) {
     const { sections } = this.state
     const dragSection = sections[dragIndex]
-    
+
     this.setState(update(this.state, {
       sections: {
         $splice: [
@@ -41,8 +43,9 @@ moveSection: function(dragIndex, hoverIndex) {
           [hoverIndex, 0, dragSection]
         ]
       }
-    })).bind(this)
+    }))
   },
+
   render: function () {
 
     const {sections} = this.state
@@ -52,11 +55,13 @@ moveSection: function(dragIndex, hoverIndex) {
         <h2>Section List</h2>
         {sections.map((section, i) => {
           return (
-            <Section key={section.id}
-                     index={i}
-                     id={section.id}
-                     text={section.text}
-                     moveSection={this.moveSection} />
+              <Section key={section.id}
+                       index={i}
+                       id={section.id}
+                       text={section.text}
+                       moveSection={this.moveSection}
+
+                        />
           )
         })}
       </div>

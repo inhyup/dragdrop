@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react'
 import { DragSource, DropTarget } from 'react-dnd'
 import { findDOMNode } from 'react-dom'
 import ItemTypes from './ItemTypes.jsx'
+import QuestionList from './questionList.jsx'
 
 const style = {
   border: '1px dashed gray',
@@ -72,10 +73,12 @@ var Section = React.createClass({
     return connectDragSource(connectDropTarget(
       <div style={{ ...style, opacity }}>
         {text}
+        <QuestionList />
       </div>
     ))
   }
 })
+
 Section = DragSource(ItemTypes.SECTION, sectionSource, collect_2)(Section)
 Section.PropTypes = {
   connectDragSource: PropTypes.func.isRequired,
@@ -86,6 +89,5 @@ Section.PropTypes = {
   text: PropTypes.string.isRequired,
   moveSection: PropTypes.func.isRequired
 }
-
 
 export default DropTarget(ItemTypes.SECTION, sectionTarget, collect_1)(Section)
